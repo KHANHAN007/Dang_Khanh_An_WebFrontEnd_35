@@ -1,0 +1,94 @@
+.site {
+    font-size: 1.25rem;
+    position: relative;
+    --primary: #7C59B0;
+    margin: 20px 10px;
+}
+
+.siteName {
+    all: unset;
+    color: #7C59B0;
+    padding: 1rem;
+    border: 2px solid #7C59B0;
+    border-radius: 8px;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-weight: 100;
+    color: #7C59B0;
+    pointer-events: none;
+    transition: 150ms;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.siteName:is(:focus, :valid)+.label {
+    transform: translateY(-120%) scale(0.7);
+    background-color: white;
+    padding-inline: 0.3rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+#login-btn {
+    padding: 5px 20px;
+    border: none;
+    background: rgb(25, 62, 97);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.btn-container {
+    padding: 20px;
+    transition: .2s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-btn:hover {
+    cursor: pointer;
+}
+
+.signup {
+    color: rgb(70, 70, 70);
+    margin-top: 10px;
+}
+
+.shift-left {
+    transform: translateX(-120%);
+}
+
+.shift-right {
+    transform: translateX(120%);
+}
+
+.shift-top {
+    transform: translateY(-150%);
+}
+
+.shift-bottom {
+    transform: translateY(150%);
+}
+
+.no-shift {
+    transform: translate(0%, 0%);
+}
+
+.modal {
+    margin: auto;
+    width: 400px;
+    height: 480px;
+    display: grid;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

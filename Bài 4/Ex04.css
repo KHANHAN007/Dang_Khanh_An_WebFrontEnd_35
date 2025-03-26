@@ -1,0 +1,23 @@
+table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+th {
+    background-color: #F2F2F2;
+}
+
+.pagination button {
+    margin: 5px;
+    padding: 5px 10px;
+    color: #007BFF;
+    background-color: transparent;
+    border: 1px solid #007BFF;
+}

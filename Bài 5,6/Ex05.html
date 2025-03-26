@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Danh mục</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .table thead {
+            background-color: #f8f9fa;
+        }
+
+        .status-active {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .status-inactive {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .icon-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .icon-btn i {
+            font-size: 18px;
+        }
+
+        .icon-btn.edit {
+            color: #ffc107;
+        }
+
+        .icon-btn.delete {
+            color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="fw-bold">Danh mục</h2>
+    <div class="d-flex justify-content-between mb-3">
+        <button id="addNewCategory" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryModal">Thêm
+            mới danh mục</button>
+        <div>
+            <select class="form-select d-inline-block w-auto me-2" id="statusFilter">
+                <option value="all">Tất cả</option>
+                <option value="active">Đang hoạt động</option>
+                <option value="inactive">Ngừng hoạt động</option>
+            </select>
+            <input type="text" id="searchInput" class="form-control d-inline-block w-auto"
+                placeholder="Tìm kiếm danh mục...">
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Mã danh mục</th>
+                <th>Tên danh mục</th>
+                <th>Trạng thái</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody id="categoryTable"></tbody>
+    </table>
+    <div class="modal fade" id="categoryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="categoryModalLabel">Thêm mới danh mục</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="categoryForm">
+                        <input type="hidden" id="editIndex">
+                        <div class="mb-3">
+                            <label class="form-label">Mã danh mục</label>
+                            <input type="text" class="form-control" id="categoryCode" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tên danh mục</label>
+                            <input type="text" class="form-control" id="categoryName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Trạng thái</label>
+                            <div>
+                                <input type="radio" id="statusActive" name="status" value="active" checked>
+                                <label for="statusActive">Đang hoạt động</label>
+                                <input type="radio" id="statusInactive" name="status" value="inactive" class="ms-3">
+                                <label for="statusInactive">Ngừng hoạt động</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Hủy</button>
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
